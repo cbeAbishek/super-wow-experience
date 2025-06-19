@@ -1,0 +1,68 @@
+/* ...existing code... */
+.loaderContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+  pointer-events: auto;
+}
+/* ...existing code... */
+.loaderContainer.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+/* ...existing code... */
+.light {
+  background-color: #ffffff;
+}
+/* ...existing code... */
+.rectangle {
+  width: 200px;
+  height: 50px;
+  border: 2px solid #000000;
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+/* ...existing code... */
+.filler {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #000000;
+  animation: fillRectangle 1.5s ease-in-out infinite;
+}
+/* ...existing code... */
+.dark {
+  background-color: #000000;
+}
+.dark .rectangle {
+  border-color: #ffffff;
+  background-color: #000000;
+}
+.dark .filler {
+  background-color: #ffffff;
+}
+/* ...existing code... */
+@keyframes fillRectangle {
+  0% {
+    width: 0%;
+  }
+  80% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+/* ...existing code... */

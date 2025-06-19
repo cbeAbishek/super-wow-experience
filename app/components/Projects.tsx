@@ -12,19 +12,19 @@ export default function Projects() {
     {
       title: "Neural Interface",
       description: "AI-powered user interface with machine learning capabilities",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/1.jpg",
       tags: ["AI", "React", "Python"],
     },
     {
       title: "Quantum Dashboard",
       description: "Real-time data visualization with quantum computing integration",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/2.jpg",
       tags: ["Quantum", "D3.js", "WebGL"],
     },
     {
       title: "Holographic Display",
       description: "3D holographic interface using advanced WebXR technologies",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/3.jpg",
       tags: ["WebXR", "Three.js", "AR/VR"],
     },
   ]

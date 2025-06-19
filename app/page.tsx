@@ -2,13 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import Preloader from "./components/Preloader";
+import { Loader } from "./components/Preloader";
 import Navigation from "./components/Navigation";
 import ScrollProgress from "./components/ScrollProgress";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Projects from "./components/Projects";
-import TabbedSection from "./components/TabbedSection"
+import TabbedSection from "./components/TabbedSection";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -18,6 +18,8 @@ import ThemeProvider from "./components/ThemeProvider";
 import NotificationToast from "./components/NotificationToast";
 import CustomCursor from "./components/CustomCursor";
 import ThemeSwitcher from "./components/ThemeSwitcher";
+import TechMetricsDashboard from "./components/chart";
+import TechPopup from "./components/TechPopup";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -39,7 +41,7 @@ export default function Home() {
         <CustomCursor />
         <AnimatePresence mode="wait">
           {isLoading ? (
-            <Preloader key="preloader" />
+            <Loader key="preloader" isLoading={isLoading} />
           ) : (
             <main key="main" className="relative">
               <ScrollProgress />
@@ -48,6 +50,7 @@ export default function Home() {
               <About />
               <Projects />
               <TabbedSection />
+              <TechMetricsDashboard />
               <Testimonials />
               <Contact />
               <Footer />
@@ -93,11 +96,8 @@ export default function Home() {
                 )}
               </AnimatePresence>
 
-              <NotificationToast
-                show={showToast}
-                onClose={() => setShowToast(false)}
-                message="Welcome to our amazing experience! 🎉"
-              />
+              {/* Popup */}
+              {!isLoading && <TechPopup />}
             </main>
           )}
         </AnimatePresence>
@@ -105,3 +105,4 @@ export default function Home() {
     </ThemeProvider>
   );
 }
+                   
