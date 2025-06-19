@@ -80,7 +80,17 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between">
-          <p className="text-white/70 mb-4 md:mb-0">© 2024 SuperWow. All rights reserved.</p>
+            <p className="text-white/70 mb-4 md:mb-0">
+            © 2024 SuperWow. All rights reserved. &nbsp;|&nbsp;
+            <a
+              href="https://cbeabishek.github.io/Abishek-portfoilio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-white"
+            >
+              Developer: Abishek
+            </a>
+            </p>
 
           <div className="flex gap-4">
             {socialLinks.map((social, index) => (
